@@ -61,6 +61,27 @@
                                 </Binding>
                             </Image.Source>
                         </Image>
+
+                        <StackPanel Grid.Column="1"
+                                    Grid.ColumnSpan="2">
+                            <TextBlock x:Name="NameSertviceTb"
+                                        Text="тут будет название"/>
+                            <TextBlock x:Name="PriceServiceTb"
+                                       Text=" Тут будет цена"/>
+                        </StackPanel>
+                        <Button x:Name="EditBtn"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Content="Редактировать"
+                                Width="50"
+                                Height="150"/>
+                        <Button x:Name="DeleteBtn"
+                                Grid.Column="2"
+                                Grid.Row="1"
+                                Content="Удалить"
+                                Width="50"
+                                Height="100"/>
+
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
