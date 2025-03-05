@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using LearnSchoolKum.Pages;
 namespace LearnSchoolKum
 {
     /// <summary>
@@ -23,6 +23,8 @@ namespace LearnSchoolKum
         public MainWindow()
         {
             InitializeComponent();
+            myFr.NavigationService.Navigate(new ServicePage());
+
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LearnSchoolKum.Db;
 
 namespace LearnSchoolKum.Pages
 {
@@ -20,9 +21,13 @@ namespace LearnSchoolKum.Pages
     /// </summary>
     public partial class ServicePage : Page
     {
+        public static List<Service> Services { get; set; }
         public ServicePage()
         {
             InitializeComponent();
+            Services = new List<Service>(DbConnection.learnSchool.Service.ToList());
+            this.DataContext = this;
+
         }
     }
 }
