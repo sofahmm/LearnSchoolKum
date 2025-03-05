@@ -34,6 +34,7 @@
                   Grid.Column="1"
                   Grid.RowSpan="6"
                   Grid.ColumnSpan="7"
+                  x:Name="ServicesLv"
                   ItemsSource="{Binding Services}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -63,15 +64,18 @@
                         <Button x:Name="EditBtn"
                                 Grid.Column="1"
                                 Grid.Row="1"
+                                HorizontalAlignment="Center"
                                 Content="Редактировать"
-                                Width="50"
-                                Height="150"/>
+                                Width="150"
+                                Height="50"/>
                         <Button x:Name="DeleteBtn"
+                                 Click="DeleteBtn_Click"
                                 Grid.Column="2"
+                                HorizontalAlignment="Center"
                                 Grid.Row="1"
                                 Content="Удалить"
-                                Width="50"
-                                Height="100"/>
+                                Width="150"
+                                Height="50"/>
 
                     </Grid>
                 </DataTemplate>

@@ -25,9 +25,21 @@ namespace LearnSchoolKum.Pages
         public ServicePage()
         {
             InitializeComponent();
-            Services = new List<Service>(DbConnection.learnSchool.Service.ToList());
+            Services = new List<Service>(DbConnection.learnSchool.Service.Where(i => i.IsDelete == false).ToList());
             this.DataContext = this;
 
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+                var ser = (sender as Button).DataContext as Service;
+                MessageBox.Show($"Вы действительно хотите удалить услугу {ser.Title}?");
+                ser.IsDelete = true;
+                DbConnection.learnSchool.SaveChanges();
+                ServicesLv.ItemsSource = new List<Service>(DbConnection.learnSchool.Service.Where(i => i.IsDelete == false).ToList());
+            
+          
         }
     }
 }
